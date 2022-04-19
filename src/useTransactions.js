@@ -1,10 +1,9 @@
 import { useContext } from 'react';
-import { ExpenseTrackerContext } from './context/context';
+import { ExpenseTrackerContext } from './Context/Context';
 
 import { incomeCategories, expenseCategories, resetCategories } from './Constants/Categories';
 
 const useTransactions = (title) => {
-    
   resetCategories();
   const { transactions } = useContext(ExpenseTrackerContext);
   const rightTransactions = transactions.filter((t) => t.type === title);
@@ -18,6 +17,8 @@ const useTransactions = (title) => {
   });
 
   const filteredCategories = categories.filter((sc) => sc.amount > 0);
+
+
 
   const chartData = {
     datasets: [{
