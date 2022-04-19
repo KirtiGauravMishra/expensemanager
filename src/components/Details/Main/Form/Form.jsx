@@ -51,7 +51,7 @@ useEffect(() => {
       const category = `${s.value.charAt(0)}${s.value.slice(1).toLowerCase()}`;
 
       switch (s.type) {
-
+        
         case 'amount':
           setFormData({ ...formData, amount: s.value });
           break;
@@ -63,7 +63,6 @@ useEffect(() => {
             setFormData({ ...formData, type: 'Expense', category });
           }
           break;
-          
         case 'date':
           setFormData({ ...formData, date: s.value });
           break;
