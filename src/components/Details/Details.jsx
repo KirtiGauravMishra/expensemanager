@@ -18,9 +18,6 @@ const DetailsCard = ({ title }) => {
       <CardContent>
         
         <Typography variant="h5">₹{total}</Typography>
-        <Doughnut data={chartData} />
-         
-        
       
         
       </CardContent>

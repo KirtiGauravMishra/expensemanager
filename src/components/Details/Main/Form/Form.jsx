@@ -7,6 +7,7 @@ import {v4 as uuidv4} from 'uuid';
 import { incomeCategories, expenseCategories } from '../../../../Constants/Categories';
 import formatDate from '../../../../utils/formatDate';
 import { useSpeechContext } from '@speechly/react-client';
+import CustomizedSnackbar from '../../snackbar/snackbar';
 
 
 const initialstate={
@@ -23,15 +24,22 @@ const classes=useStyles();
 const [formData,setFormData]=useState(initialstate);
 const{addTransaction}= useContext(ExpenseTrackerContext);
 const{segment}=useSpeechContext();
+const [open, setOpen] = React.useState(false);
+
 
 const createTransaction=()=>{
+
+  
+
     /* using uuid to get unique id everytime */
- 
+      
+   
     const transaction=({ ...formData, amount: Number(formData.amount), id: uuidv4() });
+    setOpen(true);
      addTransaction(transaction);
      setFormData(initialstate);
 
-};
+    };
 
 
 
@@ -63,9 +71,11 @@ useEffect(() => {
             setFormData({ ...formData, type: 'Expense', category });
           }
           break;
+
         case 'date':
           setFormData({ ...formData, date: s.value });
           break;
+
         default:
           break;
       }
@@ -83,6 +93,7 @@ const selectedCategories = formData.type === 'Income' ? incomeCategories : expen
 
   return (
     <Grid container spacing={2}>
+      <CustomizedSnackbar open={open} setOpen={setOpen}/>
         <Grid item xs={12}> 
         <Typography align="center" variant="subtitle2" gutterBottom>
         {segment ? (
