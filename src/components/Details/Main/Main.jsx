@@ -1,4 +1,4 @@
-import React,{useContext,useEffect,useState} from 'react';
+import React,{ useContext } from 'react';
 
 import{Card,CardHeader, CardContent,Typography,Grid,Divider}  from '@material-ui/core';
 import usestyles from './styles';
@@ -12,10 +12,11 @@ import InfoCard from '../../InfoCard';
 
 
 
-
-const main = () => {
+const Main = () => {
 const classes = usestyles();
-const {Balance} = useContext(ExpenseTrackerContext);
+
+const { balance } = useContext(ExpenseTrackerContext);
+
 
   return (
 
@@ -25,7 +26,7 @@ const {Balance} = useContext(ExpenseTrackerContext);
     <CardHeader title="Expense Tracker" subheader="Powered by Speechly" />
     <CardContent>
 
-      <Typography align="center" variant="h5">Total Balance ₹{Balance}</Typography>
+      <Typography align="center" variant="h5">Total Balance ₹{balance}</Typography>
       <Typography variant="subtitle1" style={{ lineHeight: '1.5em', marginTop: '20px' }}>
         <InfoCard />
      
@@ -49,4 +50,4 @@ const {Balance} = useContext(ExpenseTrackerContext);
 
   );
 };
-export default main;
+export default Main;
