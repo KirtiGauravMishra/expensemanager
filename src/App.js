@@ -5,15 +5,34 @@ import Main from './components/Details/Main/Main';
 import { PushToTalkButton, PushToTalkButtonContainer,ErrorPanel } from '@speechly/react-ui';
 
 import usestyles from './style';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import { BrowserRouter , Route, Routes } from "react-router-dom";
+import Login from './Authentication/Login';
+import Menu from './Authentication/SingupPage';
+import SignupPage from './Authentication/SingupPage';
+import { Link } from 'react-router-dom';
+
+
 
 
 const App = () => {
 const classes = usestyles();
 
-  return (
 
-    
+  return ( 
+          
+<div>
+    <nav>  
+      <Login  / >
+    </nav>
+
     <div>
+
+   
+
+
+
   <Grid className={classes.grid}  container spacing={0} alignItems="center" justify="center" style={{ height: '100vh'}}>
   
   <Grid item xs={12} sm={4} className={classes.mobile}>
@@ -39,6 +58,7 @@ const classes = usestyles();
           <ErrorPanel/>
         </PushToTalkButtonContainer>
         </Grid>
+    </div>
     </div>
   );
 };
