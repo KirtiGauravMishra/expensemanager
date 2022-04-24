@@ -1,6 +1,6 @@
-
-
+![Expense Tracker](https://i.ibb.co/vqJWStm/1.png)
 # Live Deployed Link 👇
+
 Click Here to Watch and Use Deployed Project [Live Link Here](https://expense-tracker-kirtigaurav.netlify.app/)
 
 # Getting Started with Create React App
